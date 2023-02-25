@@ -1,0 +1,86 @@
+@use "../../scss/" as *;
+.search {
+  position: relative;
+  width: 20vw;
+ @include mobile{
+  width: 46vw;
+ }
+  &__input {
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+    color: rgb(22, 24, 35);
+    caret-color: var(--color-items);
+    
+  }
+  & .search-btn {
+    position: absolute;
+    width: 29px;
+    height: 84%;
+    right: 3%;
+    border: none;
+    top: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    
+  }
+}
+.close-input,
+.load-input {
+  position: absolute;
+  right: 16%;
+  top: 50%;
+  color: rgba(22, 24, 35, 0.34);
+  font-size: 16px;
+  transform: translateY(-50%);
+  background: border-box;
+  border: none;
+  outline: none;
+  @include mobile{
+    right: 19%;
+  }
+}
+.search-result {
+  position: absolute;
+    background-color: white;
+    width: 20vw;
+    color: #000;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    left: -10vw;
+    top: -7px;
+    @include mobile{
+      width: 46vw;
+      left: -22vw;
+    }
+}
+.load-input{
+  animation: spinner 1s linear;
+  -webkit-animation: spinner 1s linear infinite;
+}
+@keyframes spinner{
+  from{
+    transform:translateY(-50%) rotate(0deg);
+      -webkit-transform:translateY(-50%) rotate(0deg);
+      -moz-transform:translateY(-50%) rotate(0deg);
+      -ms-transform:translateY(-50%) rotate(0deg);
+      -o-transform:translateY(-50%) rotate(0deg);
+}
+  to{
+    transform:translateY(-50%) rotate(360deg);
+      -webkit-transform:translateY(-50%) rotate(360deg);
+      -moz-transform:translateY(-50%) rotate(360deg);
+      -ms-transform:translateY(-50%) rotate(360deg);
+      -o-transform:translateY(-50%) rotate(360deg);
+}
+}
+.search__input:valid + .search-btn{
+  color: gray;
+}

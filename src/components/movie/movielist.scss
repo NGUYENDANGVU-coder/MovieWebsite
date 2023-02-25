@@ -1,0 +1,25 @@
+@use "../../scss/" as *;
+
+.movie-list {
+    
+    .swiper-slide {
+        width: 20% !important;
+        height: 40%;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            -webkit-border-radius: $border-radius;
+            -moz-border-radius: $border-radius;
+            -ms-border-radius: $border-radius;
+            -o-border-radius: $border-radius;
+}
+        @include tablet {
+            width: 30% !important;
+        }
+
+        @include mobile {
+            width: 40% !important;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@use "../../scss/" as *;
+
+.wrapper {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 16px;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 4px;
+  // border: none;
+  padding: 6px 8px;
+  background-color: white;
+  user-select: none;
+  font-family: "ProximaNova", sans-serif;
+  + .wrapper {
+    margin-left: 8px;
+    @include mobile{
+      margin-left: -13px;
+    }
+  }
+  &.disable {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+.rounded {
+  border: 1px solid rgb(0 0 0 / 6%);
+  background: none;
+  outline: none;
+  padding: 0 8px;
+  color: rgba(22, 24, 35, 0.75);
+  font-size: 14px;
+  min-width: 90px;
+  height: 32px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  border-radius: 52px;
+  &:hover {
+    box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+  }
+}
+.primary {
+  border-color: red;
+  color: #fff;
+  box-shadow: 0 0 40px 40px red inset, 0 0 0 0 red;
+  transition: all 150ms ease-in-out;
+  border-radius: 0.6em;
+  text-align: center;
+  &:hover {
+    box-shadow: 0 0 10px 0 red inset, 0 0 10px 4px red;
+  }
+}
+.outline {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  border: 2px solid $blue !important;
+  &:hover {
+    box-shadow: 0 0 40px 40px $blue inset;
+  }
+}
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 0.6em;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px 0;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  @include mobile{
+    padding: 0.2em 1.8em;
+  }
+}
+.icon {
+  margin-left: 4px;
+  margin-right: 8px;
+  width: 20px;
+  display: inline-block;
+  text-align: left;
+}
+//Buttons types
+.small {
+  border-width: 2px;
+  padding: 12px 25px;
+  font-size: 14px;
+  border: 2px solid white;
+  border-radius: 20px;
+  &:hover 
+{
+    box-shadow: 0 0 40px 40px white inset;
+    color: red;
+  }
+}
+.small-second{
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: red;
+  display: block;
+  background-color: white;
+}
+.big {
+  min-width: 140px;
+  min-height: 34px;
+  font-size: 18px;
+  padding: 14px 16px;
+}

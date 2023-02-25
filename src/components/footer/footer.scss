@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+
+.footer {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding-bottom:25px ;
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+    }
+    &__content {
+        max-width: 1000px;
+        z-index: 10;
+        position: relative;
+        &__logo {
+            display: flex;
+            justify-content: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        &__menus {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &__menu {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            font-weight: 700;
+
+            & > * ~ * {
+                margin-top: 1rem;
+                
+            }
+            
+        }
+    }
+}
+.logo{
+    display: flex;
+}
+a:hover{
+    color: red;
+}
